@@ -639,7 +639,7 @@ static const NSTimeInterval kAnimationIntervalTransform = 0.2;
     CGAffineTransform uiCoords = CGAffineTransformMakeScale(self.sourceImage.size.width/self.imageView.bounds.size.width,
                                                             self.sourceImage.size.height/self.imageView.bounds.size.height);
     uiCoords = CGAffineTransformTranslate(uiCoords, self.imageView.bounds.size.width/2.0, self.imageView.bounds.size.height/2.0);
-    uiCoords = CGAffineTransformScale(uiCoords, 1.0, -1.0);
+    uiCoords = CGAffineTransformScale(uiCoords, 1.0, 1.0);
 
     CGRect crop =  CGRectMake(-self.cropRect.size.width/2.0, -self.cropRect.size.height/2.0, self.cropRect.size.width, self.cropRect.size.height);
     return CGRectApplyAffineTransform(crop, CGAffineTransformConcat(CGAffineTransformInvert(self.imageView.transform),uiCoords));
